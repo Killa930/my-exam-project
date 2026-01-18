@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Lead extends Model
 {
@@ -13,5 +14,11 @@ class Lead extends Model
     'email',
     'message',
 ];
+
+
+public function car(): BelongsTo
+{
+    return $this->belongsTo(Car::class);
+}
 
 }
